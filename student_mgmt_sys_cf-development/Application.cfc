@@ -21,7 +21,7 @@
                 liveTimeout:15, 
                 validate:false,
             };
-            this.mappings["/components"] = "/home/spericorn/Documents/sms_cf/components";
+            this.mappings["/components"] = "/home//Documents/sms_cf/components";
             return true;
         </cfscript>
     </cffunction>

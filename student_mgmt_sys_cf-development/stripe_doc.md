@@ -43,7 +43,7 @@ Instead of hardcoding your API keys directly in your code, you should store them
                application.stripeSecretKey = GetSystemVariable("STRIPE_SECRET_KEY");
                application.stripePublishableKey = GetSystemVariable("STRIPE_PUBLISHABLE_KEY");
 
-               this.mappings["/components"] = "/home/spericorn/Documents/sms_cf/components";
+               this.mappings["/components"] = "/home//Documents/sms_cf/components";
                return true;
            </cfscript>
        </cffunction>
@@ -100,7 +100,7 @@ Instead of hardcoding your API keys directly in your code, you should store them
                application.stripeSecretKey = stripeConfig.secretKey;
                application.stripePublishableKey = stripeConfig.publishableKey;
 
-               this.mappings["/components"] = "/home/spericorn/Documents/sms_cf/components";
+               this.mappings["/components"] = "/home//Documents/sms_cf/components";
                return true;
            </cfscript>
        </cffunction>
