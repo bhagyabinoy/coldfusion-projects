@@ -1,0 +1,92 @@
+/* General reset for padding, margin, and box sizing */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header and text styling */
+h1 {
+    color: #5D2A8D;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #5D2A8D;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Sidebar styling */
+.list-group-item {
+    background-color: #5D2A8D;
+    color: white;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.list-group-item:hover {
+    background-color: #703B9E;
+}
+
+/* Content section */
+.tab-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .list-group-item {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .list-group-item {
+        font-size: 14px;
+    }
+}

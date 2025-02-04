@@ -1,0 +1,50 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Student Management API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/components/Exam.cfc": {
+      "post": {
+        "summary": "Retrieve exams for a student",
+        "operationId": "getStudentExams",
+        "parameters": [
+          {
+            "name": "method",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "getStudentExams"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "student_id": {
+                    "type": "integer",
+                    "description": "The ID of the student"
+                  }
+                },
+                "required": ["student_id"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "A list of the student's exams"
+          },
+          "400": {
+            "description": "Invalid student ID"
+          }
+        }
+      }
+    }
+  }
+}

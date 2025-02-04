@@ -1,0 +1,23 @@
+http://dev.studentmgmtapp.com:8054/: index.cfm
+
+db: http://localhost:8854/lucee/admin/web.cfm?action=services.datasource
+
+admin: http://localhost:8854/lucee/admin/server.cfm
+
+http://dev.studentmgmtapp.com:8054/components/Courses.cfc?method=addCourse&courseName=Mathematics&description=Math%20Course
+
+
+
+sudo docker exec -it sms_cf-postgres-1 bash
+psql -U postgres
+\c studentmgmtdb
+
+
+\d subjects
+ALTER TABLE teachers 
+ADD COLUMN created_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN updated_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+
+
+ALTER TABLE exams 
+ADD COLUMN updated_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP;

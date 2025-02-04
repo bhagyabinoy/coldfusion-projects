@@ -1,0 +1,86 @@
+1. Users Table
+- user_id: SERIAL (auto-increment integer)
+- username: VARCHAR(255)
+- password: VARCHAR(255)
+- email: VARCHAR(255)
+- role: VARCHAR(50)
+
+2. Students Table
+- student_id: SERIAL (auto-increment integer)
+- name: VARCHAR(255)
+- address: TEXT
+- phone: VARCHAR(20)
+- email: VARCHAR(255)
+- date_of_birth: DATE
+- gender: VARCHAR(20)
+- date_of_joining: DATE
+
+3.Teachers Table
+- teacher_id: SERIAL (auto-increment integer)
+- name: VARCHAR(255)
+- address: TEXT
+- phone: VARCHAR(20)
+- email: VARCHAR(255)
+- date_of_birth: DATE
+- gender: VARCHAR(20)
+
+4. Parents Table
+- parent_id: SERIAL (auto-increment integer)
+- name: VARCHAR(255)
+- address: TEXT
+- phone: VARCHAR(20)
+- email: VARCHAR(255)
+- date_of_birth: DATE
+- gender: VARCHAR(20)
+- student_id: INTEGER (foreign key to students.student_id)
+- relationship_type: VARCHAR(50)
+
+5. Courses Table
+- course_id: SERIAL (auto-increment integer)
+- course_name: VARCHAR(255)
+- description: TEXT
+
+6. Subjects Table
+- subject_id: SERIAL (auto-increment integer)
+- course_id: INTEGER (foreign key to courses.course_id)
+- subject_name: VARCHAR(255)
+- description: TEXT
+- max_marks: INTEGER
+
+7. Fee Management Table
+- fee_id: SERIAL (auto-increment integer)
+- student_id: INTEGER (foreign key to students.student_id)
+- fee_type: VARCHAR(50)
+- fee_amount: DECIMAL(10, 2)
+- payment_status: VARCHAR(50)
+- payment_date: DATE
+
+8. Enrollments Table
+- enrollment_id: SERIAL (auto-increment integer)
+- course_id: INTEGER (foreign key to courses.course_id)
+- student_id: INTEGER (foreign key to students.student_id)
+- start_date: DATE
+- end_date: DATE
+
+9. Attendance Table
+- attendance_id: SERIAL (auto-increment integer)
+- student_id: INTEGER (foreign key)
+- enrollment_id: INTEGER (foreign key to enrollments.enrollment_id)
+- attendance_date: DATE
+- status: VARCHAR(10)
+
+10. Marks Table
+- exam_id: SERIAL (auto-increment integer)
+- student_id: INTEGER (foreign key)
+- enrollment_id: INTEGER (foreign key)
+- subject_id: INTEGER (foreign key to subjects.subject_id)
+- marks_obtained: INTEGER
+
+11.Document_Management Table
+- document_id SERIAL (auto-increment integer)
+- student_id INTEGER (foreign key)
+- document_type VARCHAR(50),
+- document_name VARCHAR(255),
+- document_path TEXT,
+- uploaded_date DATE
+

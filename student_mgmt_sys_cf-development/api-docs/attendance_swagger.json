@@ -1,0 +1,67 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Attendance Management API",
+    "version": "1.0.0",
+    "description": "API for managing student attendance records"
+  },
+  "paths": {
+    "/components/Attendance.cfc": {
+      "post": {
+        "summary": "Add Attendance Records",
+        "description": "This endpoint adds attendance records for students.",
+        "operationId": "addAttendanceRecords",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "attendanceRecords": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "student_id": {
+                          "type": "integer",
+                          "example": 123
+                        },
+                        "attendance_date": {
+                          "type": "string",
+                          "format": "date",
+                          "example": "2024-09-10"
+                        },
+                        "status": {
+                          "type": "string",
+                          "example": "Present"
+                        }
+                      },
+                      "required": [
+                        "student_id",
+                        "attendance_date",
+                        "status"
+                      ]
+                    }
+                  }
+                },
+                "required": ["attendanceRecords"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Attendance records added successfully"
+          },
+          "400": {
+            "description": "Bad request. Check input data"
+          },
+          "500": {
+            "description": "Error inserting attendance records"
+          }
+        }
+      }
+    }
+  }
+}
